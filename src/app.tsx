@@ -8,8 +8,8 @@ export function App() {
      <p className="text-zinc-300 text-lg">Convide seus amigos e planeje sua próxima viagem!</p> 
 
 <div className="h-16 bg-zinc-900 px-4 rounded-xl flex items-center shadow-shape">
-<input type="text" placeholder="Para onde você vai?"/>
-<input type="text" placeholder="Quando?"/>
+<input type="text" placeholder="Para onde você vai?"className="bg-transparent text-lg placeholder-zinc-400"/>
+<input type="text" placeholder="Quando?"className="bg-transparent text-lg placeholder-zinc-400"/>
 
 <button>Continuar</button>
 
