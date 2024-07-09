@@ -3,9 +3,12 @@
 export function App() {
 
   return (
-    <h1 className="text-3xl font-bold underline">
-      Hello world!
-    </h1>
+   <div>
+     <p>Convide seus amigos e planeje sua próxima viagem!
+      <p>Ao planejar sua viagem pela plann.er você automaticamente concorda
+      com nossos <a href="#">termos de uso</a>  e <a href="#"> políticas de privacidade</a>.</p>
+      </p> 
+   </div>
   )
 }
 
