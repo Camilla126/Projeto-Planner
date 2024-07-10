@@ -131,7 +131,7 @@ export function App() {
 
               <div className="w-full h-px bg-zinc-800"/>
 
-              <form className=""></form>
+              <form className="p-2.5 bg-zinc-950 border border-zinc-800 rounded-lg"></form>
           </div>
         </div>
       )
