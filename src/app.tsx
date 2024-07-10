@@ -4,6 +4,7 @@ import { useState } from 'react'
 
 export function App() {
   const [isGuestsInputOpen, setIsGuestsInputOpen] = useState(false)
+const [isGuestModalOpen, setIsGuestModalOpen] = useState(false)
 
   function openGuestsInput() {
     setIsGuestsInputOpen(true)
@@ -13,7 +14,9 @@ export function App() {
     setIsGuestsInputOpen(false)
   }
 
-
+function openGuestModal() {
+setIsGuestModalOpen(true)
+}
 
   return (
     <div className="h-screen flex items-center justify-center bg-pattern bg-no-repeat bg-center">
@@ -50,10 +53,12 @@ export function App() {
 
           </div>
 
-          {isGuestsInputOpen && (<div className="h-16 bg-zinc-900 px-4 rounded-xl flex items-center shadow-shape gap-3">
+          {isGuestsInputOpen && (
+            <div className="h-16 bg-zinc-900 px-4 rounded-xl flex items-center shadow-shape gap-3">
 
-            <div className='flex items-center gap-2 flex-1'><UserRoundPlus className='size-5 text-zinc-400' />
-              <input type="text" placeholder="Quem estará na viagem?" className="bg-transparent text-lg placeholder-zinc-400 outline-none flex-1" /></div>
+            <button type='button' onClick={openGuestModal} className='flex items-center gap-2 flex-1'><UserRoundPlus className='size-5 text-zinc-400' />
+            <span className='text-zinc-400 text-lg flex-1 text-left'>Quem estará na viagem?</span>
+              <input type="text" placeholder="" className="bg-transparent text-lg placeholder-zinc-400 outline-none flex-1" /></button>
 
             <div className='w-px h-6 bg-zinc-800'></div>
 
@@ -66,11 +71,17 @@ export function App() {
 
           )}
 
+
         </div>
         <p className="text-sm text-zinc-500">Ao planejar sua viagem pela plann.er você automaticamente concorda <br />
           com nossos <a className="text-zinc-300 underline " href="#">termos de uso</a>  e <a className="text-zinc-300 underline " href="#"> políticas de privacidade</a>.</p>
 
       </div>
+
+      {isGuestModalOpen && (
+        <div className='fixed inset-0 bg-black/60'></div>
+      )
+      }
     </div>
   )
 }
