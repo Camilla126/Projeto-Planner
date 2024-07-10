@@ -1,4 +1,4 @@
-import { MapPin, Calendar, ArrowRight, UserRoundPlus, Settings2 } from 'lucide-react'
+import { MapPin, Calendar, ArrowRight, UserRoundPlus, Settings2, X } from 'lucide-react'
 import { useState } from 'react'
 
 
@@ -17,6 +17,10 @@ const [isGuestModalOpen, setIsGuestModalOpen] = useState(false)
 function openGuestModal() {
 setIsGuestModalOpen(true)
 }
+
+function closeGuestsModal() {
+  setIsGuestModalOpen(false)
+  }
 
   return (
     <div className="h-screen flex items-center justify-center bg-pattern bg-no-repeat bg-center">
@@ -81,7 +85,12 @@ setIsGuestModalOpen(true)
       {isGuestModalOpen && (
         <div className='fixed inset-0 bg-black/60 flex items-center justify-center'>
           <div className='w-[640px] rounded-xl py-5 px-6 shadow-shape bg-zinc-900'>
-            <h2>Selecionar convidados</h2>
+            <div className='flex items-center justify-between'> 
+              <h2>Selecionar convidados</h2>
+              <button type='button' onClick={closeGuestsModal}>
+<X className='size-5 text-zinc-400'/>
+              </button>
+            </div>
           </div>
         </div>
       )
