@@ -1,4 +1,4 @@
-import { ArrowRight, AtSign, Calendar, MapPin, Plus, Settings2, UserRoundPlus, X } from "lucide-react";
+import { ArrowRight, AtSign, Calendar, MapPin, Plus, Settings2, User, UserRoundPlus, X } from "lucide-react";
 import { FormEvent, useState } from "react";
 
 export function App() {
@@ -200,11 +200,20 @@ export function App() {
 
             <form onSubmit={addNewEmailToInvite}>
               <div className="py-2.5 px-4 bg-zinc-950 border border-zinc-800 rounded-lg flex items-center gap-2">
-                <AtSign className="text-zinc-400 size-5" />
+                <User className="text-zinc-400 size-5" />
+                <input               
+                  name="name"
+                  placeholder=" Seu nome completo"
+                  className="bg-transparent text-lg placeholder-zinc-400 outline-none flex-1"
+                />
+              </div>
+
+              <div className="py-2.5 px-4 bg-zinc-950 border border-zinc-800 rounded-lg flex items-center gap-2">
+                <User className="text-zinc-400 size-5" />
                 <input
                   type="email"
                   name="email"
-                  placeholder="Digite o email do convidado"
+                  placeholder="Seu e-mail pessoal"
                   className="bg-transparent text-lg placeholder-zinc-400 outline-none flex-1"
                 />
               </div>
