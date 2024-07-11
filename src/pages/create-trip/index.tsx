@@ -1,7 +1,10 @@
 import { ArrowRight, AtSign, Calendar, MapPin, Plus, Settings2, User, UserRoundPlus, X } from "lucide-react";
 import { FormEvent, useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 export function CreateTripPage() {
+const navigate = useNavigate()
+
   const [isGuestsInputOpen, setIsGuestsInputOpen] = useState(false)
   const [isGuestsModalOpen, setIsGuestsModalOpen] = useState(false)
   const [isConfirmTripModaOpen, setIsConfirmTripModalOpen] = useState(false)
@@ -57,6 +60,10 @@ export function CreateTripPage() {
     const newEmailList = emailsToInvite.filter(email => email !== emailToRemove)
 
     setEmailsToInvite(newEmailList)
+  }
+
+  function createTrip() {
+navigate('/trips/123')
   }
 
   return (
@@ -225,7 +232,7 @@ export function CreateTripPage() {
       />
     </div>
 
-    <button type="submit" className="bg-lime-300 w-full justify-center text-lime-950 rounded-lg px-5 h-11  font-medium flex items-center gap-2 hover:bg-lime-400">
+    <button onClick={createTrip} type="submit" className="bg-lime-300 w-full justify-center text-lime-950 rounded-lg px-5 h-11  font-medium flex items-center gap-2 hover:bg-lime-400">
       Confirmar criação da viagem
     </button>
   </form>
@@ -233,10 +240,6 @@ export function CreateTripPage() {
 </div>
 
 )}
-
-
-
-
 
 
     </div>
