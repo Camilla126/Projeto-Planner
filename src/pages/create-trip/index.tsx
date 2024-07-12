@@ -1,14 +1,14 @@
 import { ArrowRight, Calendar, MapPin, Settings2, User, UserRoundPlus, X } from "lucide-react";
 import { FormEvent, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { inviteGuestsModal } from "./invite-guests-modal";
+import { InviteGuestsModal } from "./invite-guests-modal";
 
 export function CreateTripPage() {
 const navigate = useNavigate()
 
   const [isGuestsInputOpen, setIsGuestsInputOpen] = useState(false)
   const [isGuestsModalOpen, setIsGuestsModalOpen] = useState(false)
-  const [isConfirmTripModaOpen, setIsConfirmTripModalOpen] = useState(false)
+  const [isConfirmTripModalOpen, setIsConfirmTripModalOpen] = useState(false)
   const [emailsToInvite, setEmailsToInvite] = useState([''])
 
   function openGuestsInput() {
@@ -143,19 +143,18 @@ navigate('/trips/123')
       </div>
 
       {isGuestsModalOpen && (
-        <inviteGuestsModal 
-addNewEmailToInvite={addNewEmailToInvite}
-emailsToInvite={emailsToInvite}
-closeGuestsModal={closeGuestsModal}
-removeEmailFromInvites={removeEmailFromInvites}
-        
-        />
+        <InviteGuestsModal 
+        emailsToInvite={emailsToInvite}
+        addNewEmailToInvite={addNewEmailToInvite}
+        closeGuestsModal={closeGuestsModal}
+        removeEmailFromInvites={removeEmailFromInvites}
+      />
 
       )}
 
 
 
-{isConfirmTripModaOpen && (
+{isConfirmTripModalOpen && (
 
 <div className="fixed inset-0 bg-black/60 flex items-center justify-center">
 <div className="w-[640px] rounded-xl py-5 px-6 shadow-shape bg-zinc-900 space-y-5">
