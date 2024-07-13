@@ -22,7 +22,7 @@
 </div>
                 </div>
                 <main className="flex gap-16">
-<div className="flex-1">
+<div className="flex-1 space-y-6">
     <div>
         <div className="flex items-center justify-between">
             <h2 className="text-3xl font-semibold">Atividades</h2>
@@ -34,6 +34,16 @@
 
         </div>
     </div>
+
+<div className="space-y-8">
+<div className="space-y-2.5">
+    <div>
+        <span>
+            Dia 17
+        </span>
+    </div>
+</div>
+</div>
 
 </div>
 <div className="w-80">
