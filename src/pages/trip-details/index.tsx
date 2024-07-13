@@ -37,10 +37,9 @@
 
 <div className="space-y-8">
 <div className="space-y-2.5">
-    <div>
-        <span>
-            Dia 17
-        </span>
+    <div className="flex gap-2 items-baseline">
+        <span className="text-xl text-zinc-300 font-semibold">Dia 17</span>
+        <span className="text-xs text-zinc-500">Sábado</span>
     </div>
 </div>
 </div>
