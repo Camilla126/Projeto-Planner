@@ -73,11 +73,22 @@
 </div>
 
 </div>
-<div className="w-80">
 
+
+
+
+<div className="w-80 space-y-6">
+<div className="space-y-6">
+<h2 className="font-semibold text-xl">Links importantes</h2>
 
 </div>
-                </main>
+<div className="w-full h-px bg-zinc-800"></div>
+<div></div>
+
+</div>
+
+
+  </main>
             </div>
         )
     }
