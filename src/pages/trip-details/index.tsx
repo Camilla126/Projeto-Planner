@@ -1,4 +1,4 @@
-    import { Calendar, CircleCheck, CircleDashed, Link2, MapPin, Plus, Settings2, Tag, User, UserCog, X } from "lucide-react";
+    import { Calendar, CircleCheck, CircleDashed, Link2, MapPin, Plus, Settings2, Tag, UserCog, X } from "lucide-react";
 import { useState } from "react";
 
     export function TripDetailsPage() {
@@ -8,7 +8,7 @@ function openCreateActivityModal() {
     setIsCreateActivityModalOpen(true)
 }
 
-function closeopenCreateActivityModal() {
+function closeCreateActivityModal() {
     setIsCreateActivityModalOpen(false)
 }
 
@@ -165,7 +165,7 @@ function closeopenCreateActivityModal() {
         <div className="flex items-center justify-between">
           <h2 className="font-lg font-semibold">Cadastrar atividade</h2>
           <button>
-            <X className="size-5 text-zinc-400" onClick={closeopenCreateActivityModal} />
+            <X className="size-5 text-zinc-400" onClick={closeCreateActivityModal} />
           </button>
         </div>
     
