@@ -16,6 +16,7 @@ export function DestinationAndDateHeader(){
         <span className=" text-zinc-100"> 17 a 23 de Agosto  </span>
     </div>
     <div className="w-px h-6 bg-zinc-800" />
+    
    <Button>
    Alterar local/data
    <Settings2 className="size-5" />
