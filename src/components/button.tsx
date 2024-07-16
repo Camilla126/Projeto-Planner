@@ -1,5 +1,11 @@
 
 import { ComponentProps, ReactNode } from "react";
+import {tv} from 'tailwind-variants'
+
+const buttonVariants = tv({
+    base: 'rounded-lg px-5 py-2 font-medium flex items-center gap-2 hover:bg-zinc-700'
+})
+
 
 interface ButtonProps extends ComponentProps<'button'> {
     children: ReactNode
