@@ -17,7 +17,7 @@ export function DestinationAndDateStep({
 }: DestinationAndDateStepProps) {
 
   const [isDatePickerOpen, setIsDatePickerOpen] = useState(false)
-
+const [eventStartAndEndDates, setEventStartAndEndDates] = useState()
 
   function openDatePicker() {
     return setIsDatePickerOpen(true)
@@ -50,7 +50,7 @@ export function DestinationAndDateStep({
 {isDatePickerOpen && (
 
  <div className="fixed inset-0 bg-black/60 flex items-center justify-center">
-        <div className="w-[320px] rounded-xl py-5 px-6 shadow-shape bg-zinc-900 space-y-5">
+        <div className=" rounded-xl py-5 px-6 shadow-shape bg-zinc-900 space-y-5">
           <div className="space-y-2">
             <div className="flex items-center justify-between">
               <h2 className="font-lg font-semibold">Selecione a data</h2>
