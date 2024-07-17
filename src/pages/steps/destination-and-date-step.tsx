@@ -2,6 +2,7 @@ import { ArrowRight, Calendar, MapPin, Settings2, X } from "lucide-react";
 import { Button } from "../../components/button";
 import { useState } from "react";
 import { DayPicker } from "react-day-picker";
+import "react-day-picker/dist/style.css"
 
 interface DestinationAndDateStepProps {
   isGuestsInputOpen: boolean
