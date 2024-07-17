@@ -44,7 +44,6 @@ openGuestsInput,
 Alterar local/data
 </Button>
         ) : (
-         
 
 <Button onClick={openGuestsInput} variant="primary">
    Continuar
