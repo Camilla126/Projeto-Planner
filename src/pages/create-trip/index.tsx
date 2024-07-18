@@ -125,6 +125,8 @@ const [eventStartAndEndDates, setEventStartAndEndDates] = useState<DateRange | u
         <ConfirmTripModal
           closeConfirmTripModal={closeConfirmTripModal}
           createTrip={createTrip}
+          setOwnerName={setOwnerName}
+          setOwnerEmail={setOwnerEmail}
         />
       )}
     </div>
