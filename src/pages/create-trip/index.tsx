@@ -94,6 +94,7 @@ const [eventStartAndEndDates, setEventStartAndEndDates] = useState<DateRange | u
          isGuestsInputOpen={isGuestsInputOpen}
          openGuestsInput={openGuestsInput}
          setDestination={setDestination}
+         eventStartAndEndDates={eventStartAndEndDates}
          setEventStartAndEndDates={setEventStartAndEndDates}
          
          

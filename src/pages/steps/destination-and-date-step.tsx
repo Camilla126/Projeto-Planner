@@ -8,6 +8,7 @@ import "react-day-picker/dist/style.css"
 
 interface DestinationAndDateStepProps {
   isGuestsInputOpen: boolean
+  eventStartAndEndDates: DateRange | undefined
   closeGuestsInput: () => void
   openGuestsInput: () => void
   setDestination: (destination: string) => void
@@ -19,10 +20,11 @@ export function DestinationAndDateStep({
   closeGuestsInput,
   openGuestsInput,
   setDestination,
+  setEventStartAndEndDates,
+  eventStartAndEndDates,
 }: DestinationAndDateStepProps) {
 
   const [isDatePickerOpen, setIsDatePickerOpen] = useState(false)
-const [eventStartAndEndDates, setEventStartAndEndDates] = useState<DateRange | undefined>()
 
   function openDatePicker() {
     return setIsDatePickerOpen(true)
