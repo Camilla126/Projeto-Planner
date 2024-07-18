@@ -30,7 +30,7 @@ const [eventStartAndEndDates, setEventStartAndEndDates] = useState<DateRange | u
   }
 
   const displayedDate = eventStartAndEndDates && eventStartAndEndDates.from
-   ? format(eventStartAndEndDates.from, 'd')
+  && eventStartAndEndDates.to ? format(eventStartAndEndDates.from, 'd').concat(' até ').concat(format(eventStartAndEndDates.to, "d'  de 'LLL"))
     : null
 
   return (
