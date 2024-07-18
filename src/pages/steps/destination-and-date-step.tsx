@@ -11,8 +11,7 @@ interface DestinationAndDateStepProps {
   closeGuestsInput: () => void
   openGuestsInput: () => void
   setDestination: (destination: string) => void
-  setOwnerName: (name: string) => void
-  setOwnerEmail: (email: string) => void
+  setEventStartAndEndDates: (dates: DateRange | undefined) => void
 }
 
 export function DestinationAndDateStep({
