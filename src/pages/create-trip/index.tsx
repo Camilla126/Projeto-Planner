@@ -74,7 +74,7 @@ export function CreateTripPage() {
     setEmailsToInvite(newEmailList)
   }
 
-  function createTrip(event: FormEvent<HTMLFormElement>) {
+ async function createTrip(event: FormEvent<HTMLFormElement>) {
     event.preventDefault()
 
     console.log(destination);
@@ -95,20 +95,22 @@ export function CreateTripPage() {
       return
     }
 
-    if (ownerName || ownerEmail) {
+    if (!ownerName || !ownerEmail) {
       return
     }
 
-    api.post('/trips', {
+    const response = await api.post('/trips', {
       destination,
       starts_at: eventStartAndEndDates?.from,
-      ends_at: '',
-      emails_to_invite: [''],
-      owner_name: '',
-      owner_email: ''
+      ends_at: eventStartAndEndDates?.to,
+      emails_to_invite: emailsToInvite,
+      owner_name: ownerName,
+      owner_email: ownerEmail
     })
 
-    //navigate('/trips/123')
+const { tripId } = response.data
+
+  navigate(`/trips/123${tripId}`)
   }
 
   return (
