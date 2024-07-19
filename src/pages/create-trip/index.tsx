@@ -15,10 +15,10 @@ export function CreateTripPage() {
   const [isGuestsModalOpen, setIsGuestsModalOpen] = useState(false)
   const [isConfirmTripModalOpen, setIsConfirmTripModalOpen] = useState(false)
 
-const [destination, setDestination] = useState('')
-const [ownerName, setOwnerName] = useState('')
-const [ownerEmail, setOwnerEmail] = useState('')
-const [eventStartAndEndDates, setEventStartAndEndDates] = useState<DateRange | undefined>()
+  const [destination, setDestination] = useState('')
+  const [ownerName, setOwnerName] = useState('')
+  const [ownerEmail, setOwnerEmail] = useState('')
+  const [eventStartAndEndDates, setEventStartAndEndDates] = useState<DateRange | undefined>()
 
   const [emailsToInvite, setEmailsToInvite] = useState([''])
 
@@ -83,26 +83,26 @@ const [eventStartAndEndDates, setEventStartAndEndDates] = useState<DateRange | u
     console.log(ownerName);
     console.log(ownerEmail);
 
-    if(!destination){
+    if (!destination) {
       return
     }
 
-    if(!eventStartAndEndDates?.from || !eventStartAndEndDates?.to){
+    if (!eventStartAndEndDates?.from || !eventStartAndEndDates?.to) {
       return
     }
-    
-if (emailsToInvite.length === 0) {
-  return
-}
 
-if (ownerName || ownerEmail) {
-  return
-}
+    if (emailsToInvite.length === 0) {
+      return
+    }
 
-    api.post('/trips',{
+    if (ownerName || ownerEmail) {
+      return
+    }
+
+    api.post('/trips', {
       destination,
-      starts_at: eventStartAndEndDates?.from, 
-      ends_at:'',
+      starts_at: eventStartAndEndDates?.from,
+      ends_at: '',
       emails_to_invite: [''],
       owner_name: '',
       owner_email: ''
@@ -122,23 +122,23 @@ if (ownerName || ownerEmail) {
         </div>
 
         <div className="space-y-4">
-         <DestinationAndDateStep
-         closeGuestsInput={closeGuestsInput}
-         isGuestsInputOpen={isGuestsInputOpen}
-         openGuestsInput={openGuestsInput}
-         setDestination={setDestination}
-         eventStartAndEndDates={eventStartAndEndDates}
-         setEventStartAndEndDates={setEventStartAndEndDates}
-         
-         
-         />
+          <DestinationAndDateStep
+            closeGuestsInput={closeGuestsInput}
+            isGuestsInputOpen={isGuestsInputOpen}
+            openGuestsInput={openGuestsInput}
+            setDestination={setDestination}
+            eventStartAndEndDates={eventStartAndEndDates}
+            setEventStartAndEndDates={setEventStartAndEndDates}
+
+
+          />
 
           {isGuestsInputOpen && (
-           <InviteGuestsStep
-           emailsToInvite={emailsToInvite}
-           openConfirmTripModal={openConfirmTripModal}
-           openGuestsModal={openGuestsModal}
-           />
+            <InviteGuestsStep
+              emailsToInvite={emailsToInvite}
+              openConfirmTripModal={openConfirmTripModal}
+              openGuestsModal={openGuestsModal}
+            />
           )}
         </div>
 
