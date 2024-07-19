@@ -82,7 +82,23 @@ const [eventStartAndEndDates, setEventStartAndEndDates] = useState<DateRange | u
     console.log(emailsToInvite);
     console.log(ownerName);
     console.log(ownerEmail);
+
+    if(!destination){
+      return
+    }
+
+    if(!eventStartAndEndDates?.from || !eventStartAndEndDates?.to){
+      return
+    }
     
+if (emailsToInvite.length === 0) {
+  return
+}
+
+if (ownerName || ownerEmail) {
+  return
+}
+
     api.post('/trips',{
       destination,
       starts_at: eventStartAndEndDates?.from, 
