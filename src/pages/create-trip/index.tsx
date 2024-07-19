@@ -6,6 +6,7 @@ import { ConfirmTripModal } from "./confirm-trip=modal";
 import { DestinationAndDateStep } from "../steps/destination-and-date-step";
 import { InviteGuestsStep } from "../steps/invite-guests-step";
 import { DateRange } from "react-day-picker";
+import { api } from "../../lib/axios";
 
 export function CreateTripPage() {
   const navigate = useNavigate()
@@ -78,11 +79,18 @@ const [eventStartAndEndDates, setEventStartAndEndDates] = useState<DateRange | u
 
     console.log(destination);
     console.log(eventStartAndEndDates);
-    console.log(setEmailsToInvite);
+    console.log(emailsToInvite);
     console.log(ownerName);
     console.log(ownerEmail);
     
-    
+    api.post('/trips',{
+      destination,
+      starts_at: eventStartAndEndDates?.from, 
+      ends_at:'',
+      emails_to_invite: [''],
+      owner_name: '',
+      owner_email: ''
+    })
 
     //navigate('/trips/123')
   }
