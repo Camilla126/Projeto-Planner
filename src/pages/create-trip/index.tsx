@@ -75,7 +75,16 @@ const [eventStartAndEndDates, setEventStartAndEndDates] = useState<DateRange | u
 
   function createTrip(event: FormEvent<HTMLFormElement>) {
     event.preventDefault()
-    navigate('/trips/123')
+
+    console.log(destination);
+    console.log(eventStartAndEndDates);
+    console.log(setEmailsToInvite);
+    console.log(ownerName);
+    console.log(ownerEmail);
+    
+    
+
+    //navigate('/trips/123')
   }
 
   return (
