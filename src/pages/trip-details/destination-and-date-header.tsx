@@ -28,7 +28,7 @@ api.get(`/trips/${tripId}`).then(response => setTrip(response.data.trip))
         <div className="px-4 h-16 rounded-xl bg-zinc-900 shadow-shape flex items-center justify-between">
             <div className="flex items-center gap-2">
                 <MapPin className="size-5 text-zinc-400" />
-                <span className=" text-zinc-100"> Florianópolis, Brasil  </span>
+                <span className=" text-zinc-100"> {trip?.destination} </span>
             </div>
 
             <div className="flex items-center gap-5">
