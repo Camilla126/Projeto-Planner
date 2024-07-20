@@ -4,9 +4,8 @@ import { useParams } from "react-router-dom";
 
 
 export function DestinationAndDateHeader() {
-const params = useParams()
+const { tripId } = useParams()
 
-console.log(params)
 
     return (
 
