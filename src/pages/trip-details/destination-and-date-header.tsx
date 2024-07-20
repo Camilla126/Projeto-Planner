@@ -1,11 +1,17 @@
 import { Calendar, MapPin, Settings2, } from "lucide-react";
 import { Button } from "../../components/button";
 import { useParams } from "react-router-dom";
+import { api } from "../../lib/axios"
+import { useEffect } from "react";
 
 
 export function DestinationAndDateHeader() {
 const { tripId } = useParams()
 
+useEffect(() => {
+api.get(`/trips/${tripId}`).then(response => console.log(response.data))
+
+}, [tripId])
 
     return (
 
