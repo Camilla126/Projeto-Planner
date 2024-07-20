@@ -13,6 +13,7 @@ is_confirmed: boolean
 
 }
 
+
 export function DestinationAndDateHeader() {
 const { tripId } = useParams()
 const [trip, setTrip] = useState<Trip | undefined>()
