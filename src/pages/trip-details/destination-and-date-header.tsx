@@ -4,10 +4,19 @@ import { useParams } from "react-router-dom";
 import { api } from "../../lib/axios";
 import { useEffect, useState } from "react";
 
+interface Trip {
+id: string
+destination: string
+starts_at: string
+ends_at: string
+is_confirmed: boolean
+
+}
+
 
 export function DestinationAndDateHeader() {
 const { tripId } = useParams()
-const [trip, setTrip] = useState()
+const [trip, setTrip] = useState<Trip | undefined>()
 
 useEffect(() => {
 api.get(`/trips/${tripId}`).then(response => setTrip(response.data.trip))
