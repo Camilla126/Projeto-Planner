@@ -4,12 +4,19 @@ import { useParams } from "react-router-dom";
 import { api } from "../../lib/axios";
 import { useEffect } from "react";
 
+interface Participant {
+    id: string
+    name: string | null
+    email: string
+    ia_confirmed: boolean
+}
+
 export function Guests(){
     const { tripId } = useParams()
     const [trip, setTrip] = useState<Trip | undefined>()
     
     useEffect(() => {
-    api.get(`/trips/${tripId}/participants`).then(response => setTrip(response.data.trip))
+    api.get(`/trips/${tripId}/participants`).then(response => setTrip(response.data.participants))
     }, [tripId])
     
 
