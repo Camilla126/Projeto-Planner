@@ -1,7 +1,18 @@
 import { CircleDashed, UserCog } from "lucide-react";
 import { Button } from "../../components/button";
+import { useParams } from "react-router-dom";
+import { api } from "../../lib/axios";
+import { useEffect } from "react";
 
 export function Guests(){
+    const { tripId } = useParams()
+    const [trip, setTrip] = useState<Trip | undefined>()
+    
+    useEffect(() => {
+    api.get(`/trips/${tripId}/participants`).then(response => setTrip(response.data.trip))
+    }, [tripId])
+    
+
     return(
         <div className="space-y-6">
 <h2 className="font-semibold text-xl">Convidados</h2>
