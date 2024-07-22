@@ -1,4 +1,4 @@
-import { CircleDashed, UserCog } from "lucide-react";
+import { CheckCircle, CircleDashed, UserCog } from "lucide-react";
 import { Button } from "../../components/button";
 import { useParams } from "react-router-dom";
 import { api } from "../../lib/axios";
@@ -8,7 +8,7 @@ interface Participant {
     id: string
     name: string | null
     email: string
-    ia_confirmed: boolean
+    is_confirmed: boolean
 }
 
 export function Guests(){
@@ -31,7 +31,12 @@ export function Guests(){
         <span className="block font-medium text-zinc-100">{participant.name}</span>
         <span className="block text-sm text-zinc-400 truncate ">{participant.email}</span>
     </div>
+   {participant.is_confirmed ? (
+    <CheckCircle />
+
+   ) : (
     <CircleDashed className="text-zinc-400 size-5 shrink-0"/>
+   ) }
 </div>
     )
 })}
