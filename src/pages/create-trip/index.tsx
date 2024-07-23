@@ -10,11 +10,12 @@ import { api } from "../../lib/axios";
 
 export function CreateTripPage() {
   const navigate = useNavigate()
-
   const [isGuestsInputOpen, setIsGuestsInputOpen] = useState(false)
   const [isGuestsModalOpen, setIsGuestsModalOpen] = useState(false)
   const [isConfirmTripModalOpen, setIsConfirmTripModalOpen] = useState(false)
- const [emailsToInvite, setEmailsToInvite] = useState([''])
+  const [emailsToInvite, setEmailsToInvite] = useState([
+    'camillacarvalho@gmail.com.br',
+  ])
  
   const [destination, setDestination] = useState('')
   const [ownerName, setOwnerName] = useState('')
@@ -103,6 +104,7 @@ export function CreateTripPage() {
       owner_email: ownerEmail
     })
 
+
 const { tripId } = response.data
 
   navigate(`/trips/${tripId}`)
@@ -119,15 +121,14 @@ const { tripId } = response.data
         </div>
 
         <div className="space-y-4">
-          <DestinationAndDateStep
+         
+        <DestinationAndDateStep 
             closeGuestsInput={closeGuestsInput}
             isGuestsInputOpen={isGuestsInputOpen}
             openGuestsInput={openGuestsInput}
             setDestination={setDestination}
-            eventStartAndEndDates={eventStartAndEndDates}
             setEventStartAndEndDates={setEventStartAndEndDates}
-
-
+            eventStartAndEndDates={eventStartAndEndDates}
           />
 
           {isGuestsInputOpen && (
