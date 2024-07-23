@@ -14,13 +14,14 @@ export function CreateTripPage() {
   const [isGuestsInputOpen, setIsGuestsInputOpen] = useState(false)
   const [isGuestsModalOpen, setIsGuestsModalOpen] = useState(false)
   const [isConfirmTripModalOpen, setIsConfirmTripModalOpen] = useState(false)
-
+ const [emailsToInvite, setEmailsToInvite] = useState([''])
+ 
   const [destination, setDestination] = useState('')
   const [ownerName, setOwnerName] = useState('')
   const [ownerEmail, setOwnerEmail] = useState('')
   const [eventStartAndEndDates, setEventStartAndEndDates] = useState<DateRange | undefined>()
 
-  const [emailsToInvite, setEmailsToInvite] = useState([''])
+ 
 
   function openGuestsInput() {
     setIsGuestsInputOpen(true)
@@ -77,12 +78,6 @@ export function CreateTripPage() {
  async function createTrip(event: FormEvent<HTMLFormElement>) {
     event.preventDefault()
 
-    console.log(destination);
-    console.log(eventStartAndEndDates);
-    console.log(emailsToInvite);
-    console.log(ownerName);
-    console.log(ownerEmail);
-
     if (!destination) {
       return
     }
@@ -101,8 +96,8 @@ export function CreateTripPage() {
 
     const response = await api.post('/trips', {
       destination,
-      starts_at: eventStartAndEndDates?.from,
-      ends_at: eventStartAndEndDates?.to,
+      starts_at: eventStartAndEndDates.from,
+      ends_at: eventStartAndEndDates.to,
       emails_to_invite: emailsToInvite,
       owner_name: ownerName,
       owner_email: ownerEmail
@@ -110,7 +105,7 @@ export function CreateTripPage() {
 
 const { tripId } = response.data
 
-  navigate(`/trips/123${tripId}`)
+  navigate(`/trips/${tripId}`)
   }
 
   return (
