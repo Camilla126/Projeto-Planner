@@ -97,8 +97,8 @@ export function CreateTripPage() {
 
     const response = await api.post('/trips', {
       destination,
-      starts_at: eventStartAndEndDates.from,
-      ends_at: eventStartAndEndDates.to,
+      starts_at: new Date(eventStartAndEndDates.from).toString(),
+      ends_at: new Date(eventStartAndEndDates.to).toString(),
       emails_to_invite: emailsToInvite,
       owner_name: ownerName,
       owner_email: ownerEmail
