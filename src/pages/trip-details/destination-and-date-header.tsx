@@ -1,9 +1,13 @@
 import { MapPin, Calendar, Settings2 } from "lucide-react";
 import { Button } from "../../components/button";
 import { useParams } from "react-router-dom";
+import { api } from "../../lib/axios";
 
 export function DestinationAndDateHeader() {
-const params = useParams()
+const {tripId} = useParams()
+
+api.get(`/trips/${tripId}`).then(response => console.log(response.data))
+
 
   return (
     <div className="px-4 h-16 rounded-xl bg-zinc-900 shadow-shape flex items-center justify-between">
