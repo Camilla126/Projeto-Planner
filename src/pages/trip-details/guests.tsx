@@ -4,6 +4,13 @@ import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { api } from "../../lib/axios";
 
+interface Participants {
+  id: string;
+  name: string | null;
+  email: string;
+  is_confirmed: boolean;
+}
+
 export function Guests() {
   const { tripId } = useParams();
   const [trip, setTrip] = useState<Trip | undefined>();
