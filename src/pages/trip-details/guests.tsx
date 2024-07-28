@@ -1,4 +1,4 @@
-import { CircleDashed, UserCog } from "lucide-react";
+import { CheckCircle2, CircleDashed, UserCog } from "lucide-react";
 import { Button } from "../../components/button";
 import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
@@ -40,8 +40,11 @@ export function Guests() {
                   {participant.email}
                 </span>
               </div>
-
-              <CircleDashed className="text-zinc-400 size-5 shrink-0" />
+              {participant.is_confirmed ? (
+                <CheckCircle2 className="size-5 shrink-0 text-green-400" />
+              ) : (
+                <CircleDashed className="text-zinc-400 size-5 shrink-0" />
+              )}
             </div>
           );
         })}
