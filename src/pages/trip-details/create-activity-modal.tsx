@@ -1,8 +1,8 @@
 import { Calendar, Tag, X } from "lucide-react";
 import { Button } from "../../components/button";
 import { FormEvent } from "react";
-import { useParams } from "react-router-dom";
 import { api } from "../../lib/axios";
+import { useParams } from "react-router-dom";
 
 interface CreateActivityModalProps {
   closeCreateActivityModal: () => void;
@@ -11,10 +11,10 @@ interface CreateActivityModalProps {
 export function CreateActivityModal({
   closeCreateActivityModal,
 }: CreateActivityModalProps) {
-  const { tripId } = useParams;
+  const { tripId } = useParams();
 
   async function createActivity(event: FormEvent<HTMLFormElement>) {
-    event?.preventDefault();
+    event.preventDefault();
 
     const data = new FormData(event.currentTarget);
 
@@ -25,6 +25,8 @@ export function CreateActivityModal({
       title,
       occurs_at,
     });
+
+    window.document.location.reload();
   }
 
   return (
