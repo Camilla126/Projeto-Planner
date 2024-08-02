@@ -34,7 +34,7 @@ export function CreateActivityModal({
       <div className="w-[640px] rounded-xl py-5 px-6 shadow-shape bg-zinc-900 space-y-5">
         <div className="space-y-2">
           <div className="flex items-center justify-between">
-            <h2 className="font-lg font-semibold">Cadastrar atividade</h2>
+            <h2 className="font-lg font-semibold">Cadastrar Atividade</h2>
             <button>
               <X
                 className="size-5 text-zinc-400"
