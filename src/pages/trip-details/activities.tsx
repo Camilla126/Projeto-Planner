@@ -1,7 +1,8 @@
-import { CircleCheck } from "lucide-react";
+import { Activity, CircleCheck } from "lucide-react";
 import { api } from "../../lib/axios";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
+import { format } from "date-fns";
 
 interface Activity {
   date: string;
@@ -24,15 +25,21 @@ export function Activities() {
 
   return (
     <div className="space-y-8">
-      <div className="space-y-2.5">
-        <div className="flex gap-2 items-baseline">
-          <span className="text-xl text-zinc-300 font-semibold">Dia 18</span>
-          <span className="text-xs text-zinc-500">Domingo</span>
-        </div>
-        <p className="text-zinc-500 text-sm">
-          Nenhuma atividade cadastrada nessa data
-        </p>
-      </div>
+      {activities.map((activity) => {
+        return (
+          <div key={activity.date} className="space-y-2.5">
+            <div className="flex gap-2 items-baseline">
+              <span className="text-xl text-zinc-300 font-semibold">
+                Dia {format(activity.date, "d")}
+              </span>
+              <span className="text-xs text-zinc-500">Domingo</span>
+            </div>
+            <p className="text-zinc-500 text-sm">
+              Nenhuma atividade cadastrada nessa data
+            </p>
+          </div>
+        );
+      })}
 
       <div className="space-y-2.5">
         <div className="flex gap-2 items-baseline">
